@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Home</h2>
+<hr />
+
+@if (User.Identity.IsAuthenticated)
+{
+    <label class="label label-info">
+        @User.Identity.Name
+    </label>
+    <a href="/Account/Logout" class="btn btn-danger">Logout</a>
+}
+else
+{
+    <a href="/Account/Login" class="btn btn-success">Login</a>
+    <a href="/Account/Register" class="btn btn-primary">Register</a>
+}
+
